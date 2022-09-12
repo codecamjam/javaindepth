@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 class BasicsDemo {
     // 1. Naming rules for classes/methods/variables
         // a. First character: letter, underscore, $
@@ -43,7 +45,25 @@ class BasicsDemo {
     public static void main(String[] args) {
         //we can use these methods directly because they are static methods
         // print();
-        primitives();
+        // primitives();
+        //cant be accurately represented by computers
+        System.out.println(1 - 0.9); // 0.09999999999999998
+        System.out.println(0.1 + 0.2); // 0.30000000000000004
+        // 0.1 ~ 0.0001100110011001100110011001100110011001100110011001100110
+
+        double price = 1000;
+        double discountPercent = 0.9;
+        double discountAmount = price * discountPercent;
+        System.out.println(price - discountAmount); // 100.0
+        //when using money, dont use double and float!
+        System.out.println(price * (1 - discountPercent)); // (1 - 0.9) prints 99.99999999999997
+
+        //BETTER WAY TO HANDLE MONEY
+        //ITEM 48 EFFECTIVE JAVA
+        //avoid float and double if exact answers are required
+        BigDecimal first = new BigDecimal("0.1");
+        BigDecimal second = new BigDecimal("0.2");
+        System.out.println(first.add(second)); //0.3
     }
 
     
