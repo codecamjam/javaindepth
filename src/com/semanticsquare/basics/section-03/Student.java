@@ -4,12 +4,12 @@ class Student {
     short rank = 165; 
     long phone = 223_456_7890L;
 
-    // float gpa = 3.8f; //this won't work if its 3.8, b/c then its a double literal
-    // double gpa = 3.8; // or 3.8d
-    // double gpa = 3.8e4; //38000.0
-    double gpa = 3.888888888888888888888888888889999999999 // 3.888888888888889 truncated
-    //double has precision of 15 and it gets rounded
-    // float gpa = 3.888888888888888888888888888889999999999f //3.8888888
+    double gpa = 3.8;
+
+    // char degree = 'B';
+    // char degree = '\u0042'; // has to be lowercase and valid number
+    char degree = '\u0000'; // default null char same as char degree;
+    // char degree = ' '; //cant be ''
 
     void compute() {
         int nextId = id + 1;
@@ -20,6 +20,8 @@ class Student {
         System.out.println("rank: " + rank);
         System.out.println("phone: " + phone);
         System.out.println("gpa: " + gpa);
+        System.out.println("degree: " + degree);
+
 
     }
 
