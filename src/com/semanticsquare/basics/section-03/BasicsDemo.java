@@ -25,21 +25,25 @@ class BasicsDemo {
         System.out.println("world");
     }
 
+    static void primitives() {
+        System.out.println("\n\nInside Primitives ...");
+        // int intHex = 0x0041; // 65 -> 16 power 0 * 1 + 16 power 1 * 4
+        long intHex = 0x0041L;
+        System.out.println("intHex: " + intHex);   
+
+        // Java 7 onwards
+        // int intBinary = 0b01000001; // 65
+        int intBinary = 0b0100_0001; // 65
+        System.out.println("intBinary: " + intBinary);  
+
+        int intOctal = 0101; // base 8 so 
+        System.out.println("intOctal: " + intOctal);  
+    }
+
     public static void main(String[] args) {
-        print();
-
-        // 4. Comments or Disabling Code - I already know this of course
-
-        // 5. Arithmetic Operations
-
-        int i = 6;
-        int j = 2;
-
-        System.out.println(i + j); //8
-        System.out.println(i - j); //4
-        System.out.println(i * j); //12
-        System.out.println(i / j); //3
-        System.out.println(i % j); //0
+        //we can use these methods directly because they are static methods
+        // print();
+        primitives();
     }
 
     
