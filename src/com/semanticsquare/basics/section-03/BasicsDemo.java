@@ -103,11 +103,22 @@
 		System.out.println("unitsSold[0][3][1]: " + unitsSold[0][3][1]);
 	}	
 
+	//1
 	static void go(int[] array) {
 		System.out.println("array[0]: " + array[0]);
 		System.out.println("array[1]: " + array[1]);
 		array[1] = 22;
+	}
+
+	//2
+	void go(int i) {
+		System.out.println("go (int i)");
 	}	
+
+	//3
+	static void go(short s) {
+		System.out.println("go (short s)");
+	}			
 
     public static void main(String[] args) {	
 		// Language Basics 1
@@ -119,6 +130,14 @@
 
 		int [] array = {1, 2};
 		go(array);
-		System.out.println("array[1]: " + array[1]);
+		System.out.println("array[1]: " + array[1]); //1
+
+		go(1000); //2
+		
+
+		byte b = 22;
+		go(b); // 3
+
+		
     }       
 }
