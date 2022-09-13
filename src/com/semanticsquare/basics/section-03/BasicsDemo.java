@@ -101,29 +101,13 @@
 										 };
 		                    	 
 		System.out.println("unitsSold[0][3][1]: " + unitsSold[0][3][1]);
-	}		
+	}	
 
-    // causes compiler error if both arguments passed are not float
-    // static double sum(float x, float y) {
-    //     return x + y;
-    // }
-
-	// static float sum(double x, double y) {
-	// 	return (float) (x + y);
-	// }
-
-	static double sum(double x, double y) {
-        return x + y;
-    }
-
-	static double avg(double x, double y) {
-		double sum = sum(x, y);
-		return sum / 2;
-	}
-
-	static boolean search(int[] list, int key) {
-		return true;
-	}
+	static void go(int[] array) {
+		System.out.println("array[0]: " + array[0]);
+		System.out.println("array[1]: " + array[1]);
+		array[1] = 22;
+	}	
 
     public static void main(String[] args) {	
 		// Language Basics 1
@@ -133,21 +117,8 @@
 		//arrays();	
 		//threeDimensionalArrays();
 
-	    // double d = sum(3.0f, 2.0f);
-		// double d = sum(3.0f, 2.0);
-		// this is fine because return type float is smaller than doubl
-		//double d = sum(3.0f, (float) 2.0);
-		// this breaks unless we insert a float cast here because return type double is large than float
-		float d = (float) sum(3.0f, (float) 2.0);
-		System.out.println(d);  	 
-
-		double d2 = avg(3.0, 2.0);
-		System.out.println(d2); 
-
-		// int[] list = {1, 2};
-		// search(list, 2); 
-		int[] list = {1, 2};
-		// list = {2, 3}; //won't work
-		search(new int[] {1,2}, 2); 
+		int [] array = {1, 2};
+		go(array);
+		System.out.println("array[1]: " + array[1]);
     }       
-  }
+}
