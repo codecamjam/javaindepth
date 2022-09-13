@@ -6,10 +6,7 @@ class Student {
 
     double gpa = 3.8;
 
-    // char degree = 'B';
-    // char degree = '\u0042'; // has to be lowercase and valid number
-    char degree = '\u0000'; // default null char same as char degree;
-    // char degree = ' '; //cant be ''
+    char degree = 'B';
 
     void compute() {
         int nextId = id + 1;
@@ -21,7 +18,6 @@ class Student {
         System.out.println("phone: " + phone);
         System.out.println("gpa: " + gpa);
         System.out.println("degree: " + degree);
-
 
     }
 
