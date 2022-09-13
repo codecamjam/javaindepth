@@ -62,6 +62,11 @@ class BasicsDemo {
         System.out.println("cChar: " + cChar);
     }
 	
+    static int count = 25;
+    // count = 34; // compilation error
+
+    //if (count < 49) {} also an error
+
 	public static void main(String[] args) {	
         // Language Basics 1
         //print();				
