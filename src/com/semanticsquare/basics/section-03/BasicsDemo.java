@@ -1,4 +1,4 @@
-  class BasicsDemo {
+class BasicsDemo {
     // Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
     static void print() {
       System.out.println("\n\nInside print ...");
@@ -102,42 +102,24 @@
 		                    	 
 		System.out.println("unitsSold[0][3][1]: " + unitsSold[0][3][1]);
 	}	
-
-	//1
-	static void go(int[] array) {
-		System.out.println("array[0]: " + array[0]);
-		System.out.println("array[1]: " + array[1]);
-		array[1] = 22;
+	
+	static void varargsOverload(boolean b, int i, int j, int k){
+	   System.out.println("\nInside varargsOverload without varargs ...");
 	}
-
-	//2
-	void go(int i) {
-		System.out.println("go (int i)");
+	static void varargsOverload(boolean b, int... list){
+	   System.out.println("\nInside varargsOverload with varargs ...");
+	   System.out.println("list.length: " + list.length);
 	}	
-
-	//3
-	static void go(short s) {
-		System.out.println("go (short s)");
-	}			
-
-    public static void main(String[] args) {	
-		// Language Basics 1
-		//print();				
-		//primitives();
-		//typeCasting();
-		//arrays();	
-		//threeDimensionalArrays();
-
-		int [] array = {1, 2};
-		go(array);
-		System.out.println("array[1]: " + array[1]); //1
-
-		go(1000); //2
 		
-
-		byte b = 22;
-		go(b); // 3
-
-		
+	public static void main(String[] args) {	
+	  // Language Basics 1
+	  //print();				
+	  //primitives();
+	  //typeCasting();
+	  //arrays();	
+      //threeDimensionalArrays();	
+      varargsOverload(true, 1, 2, 3);
+      varargsOverload(true, 1, 2, 3, 4, 5, 6, 7, 8);	  
+      varargsOverload(true);	  
     }       
-}
+  }
