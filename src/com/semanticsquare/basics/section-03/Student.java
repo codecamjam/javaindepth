@@ -1,6 +1,4 @@
 class Student {
-    // INSTANCE AND STATIC VARIABLES ARE ALSO REFERRED TO AS FIELDS OR ATTRIBUTES.
-    // ATTRIBUTES IS MORE COMMONLY ASSOCIATED WITH INSTANCE VARIABLES
     static int computeCount;
     int id;
     String name;
@@ -12,19 +10,12 @@ class Student {
 
     boolean international;
     double tuitionFees = 12000.0, internationalFees = 5000.0;
-    //the following wont work in a method
-    // double tuitionFees, internationalFees = 5000.0; // tuitionFees would be 0
-    // double tuitionFees = 100, internationalFees = tuitionFees + 5000.0; // 5100
-    // double tuitionFees = 100;
-    // double internationalFees = tuitionFees = 5000.0; // both become 5000
+
 
     void compute() {
-        // double tuitionFees, internationalFees = 5000.0;
-        // tuitionFees = 12000;
         computeCount = computeCount + 1;
         int nextId = id + 1;
 
-        // if (international == true) {
         if (international) {
             tuitionFees = tuitionFees + internationalFees;
         }

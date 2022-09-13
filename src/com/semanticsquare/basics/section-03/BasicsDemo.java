@@ -1,73 +1,71 @@
-import java.math.BigDecimal;
-
 class BasicsDemo {
-    // 1. Naming rules for classes/methods/variables
-        // a. First character: letter, underscore, $
-        //    Remaining: letter, underscore, $, numbers
-        // b. No reserved keywords
-    int id1 = 0;
-
-    // 2. **Java is case-sensitive
-
-    int id = 0;
-    int Id = 0;
-    int ID = 0;
-
-    void foo() {}
-    void Foo() {}
-
-    // 3. Printing to console
+    // Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
     static void print() {
-        System.out.println("\n\nInside print...");
-        System.out.println("Hello, world!!");        
-        System.out.println();                        
-        System.out.print("Hello, world!!");           
-        System.out.println("Hello,");               
-        System.out.print(" ");                  
-        System.out.println("world");
+        System.out.println("\n\nInside print ...");
+        System.out.println("Hello, world!!"); // Advance cursor to beginning of next line
+        System.out.println();                 // Print empty line
+        System.out.print("Hello, world!!");   // Cursor stayed after the printed string
+        System.out.println("Hello,");
+        System.out.print(" ");                // Print a space
+        System.out.print("world!!");
+    }
+	
+	static void primitives() {
+        System.out.println("\n\nInside primitives ..."); 
+        // literals demo
+        int intHex = 0x0041;
+        System.out.println("intHex: " + intHex);
+        int intBinary = 0b01000001;
+        System.out.println("intBinary: " + intBinary);
+        int intChar = 'A'; // holds decimal equivalent, which is 65
+        System.out.println("intChar: " + intChar);
+        int intUnderscore = 1_23_456;
+        System.out.println("intUnderscore: " + intUnderscore);
+
+        char charA = 'A';
+        System.out.println("charA: " + charA);
+        char charInt = 65;
+        System.out.println("charInt: " + charInt);
+        char charUnicode1 = '\u0041'; // 4 * (16 power 1 )+ 1 * (16 power 0)
+        System.out.println("charUnicode1: " + charUnicode1);
+        char charUnicode2 = 0x41;     // 4 * (16 power 1 )+ 1 * (16 power 0)
+        System.out.println("charUnicode2: " + charUnicode2);
+        char charBinary = 0b01000001; // binary corresponding to decimal 65
+        System.out.println("charBinary: " + charBinary);	  		  	  
     }
 
-    static void primitives() {
-        System.out.println("\n\nInside Primitives ...");
-        long intHex = 0x0041L;
-        System.out.println("intHex: " + intHex);   
+    static void typeCasting() {
+        System.out.println("\nInside typeCasting ...");
+        // Explicit casting
+        long y = 42;
+        //int x = y;
+        int x = (int)y;
 
-        int intBinary = 0b0100_0001; // 65
-        System.out.println("intBinary: " + intBinary);  
+        // Information loss due to out-of-range assignment
+        byte narrowdByte = (byte)123456;
+        System.out.println("narrowdByte: " + narrowdByte); 
 
-        int intOctal = 0101; // base 8 so 
-        System.out.println("intOctal: " + intOctal);  
+        // Truncation
+        int iTruncated = (int)0.99;
+        System.out.println("iTruncated: " + iTruncated); 
+        // Implicit cast (int to long)
+        y = x;
 
-        int intChar = 'A'; // prints 65 
+        // Implicit cast (char to int)
+        char cChar = 'A';
+        int iInt = cChar; 
+        System.out.println("iInt: " + iInt);
 
-        char charInt = 65; // A has to be between 0 and 65535
-        System.out.println("charInt: " + charInt);  
-
-        char charHex = 0x0041; // 65
-        System.out.println("charHex: " + charHex);  
-
-        char charBinary = 0b0100_0001; // 65
-        System.out.println("charBinary: " + charBinary);  
+	    // byte to char using an explicit cast
+        byte bByte = 65;
+        cChar = (char)bByte; // special conversion (widening from byte --> int followed by narrowing from int --> char)
+        System.out.println("cChar: " + cChar);
     }
-
-    public static void main(String[] args) {
-       
-        // System.out.println(1 - 0.9); 
-        // System.out.println(0.1 + 0.2);
-
-        // double price = 1000;
-        // double discountPercent = 0.9;
-        // double discountAmount = price * discountPercent;
-        // System.out.println(price - discountAmount); 
-
-        // System.out.println(price * (1 - discountPercent));
-
-        // BigDecimal first = new BigDecimal("0.1");
-        // BigDecimal second = new BigDecimal("0.2");
-        // System.out.println(first.add(second));
-
-        primitives();
-    }
-
-    
+	
+	public static void main(String[] args) {	
+        // Language Basics 1
+        //print();				
+        //primitives();
+        typeCasting(); 
+    }       
 }
