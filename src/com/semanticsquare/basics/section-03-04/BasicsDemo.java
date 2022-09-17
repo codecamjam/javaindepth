@@ -111,122 +111,13 @@ static void varargsOverload(boolean b, int... list){
 	System.out.println("list.length: " + list.length);
 }	
 
-	
-static void preAndPost() {
-	System.out.println("\nInside preAndPost ...");
-	
-	int x = 5;
-	
-	//--x;		
-	//System.out.println("x: " + x);	
-
-	//int y = x--;		
-	//System.out.println("y: " + y + ", x: " +  x);
-	
-	int index = 0;
-	int[] array = new int[3];
-	array[index++] = 10;		
-	array[index++] = 20;		
-	array[index++] = 30;
-	
-	System.out.println(index);
-}
-
-
-static void compoundArithmeticAssignment() {
-	int x = 100;
-	
-	System.out.println("x += 5: " + (x += 5));
-	System.out.println("x -= 5: " + (x -= 5));
-	System.out.println("x *= 5: " + (x *= 5));
-	System.out.println("x /= 5: " + (x /= 5));
-	System.out.println("x %= 5: " + (x %= 5));
-	
-	// Invalid
-	System.out.println("x =+ 5: " + (x =+ 5)); // Unary plus ~ x = +5
-	System.out.println("x =- 5: " + (x =- 5)); // Unary minus ~ x = -5
-	/*System.out.println("x =* 5: " + (x =* 5));
-	System.out.println("x =/ 5: " + (x =/ 5));
-	System.out.println("x =% 5: " + (x =% 5));*/
-}
-
-static void isOddOrEven(int num) {
-	System.out.println(num % 2);
-}
-
-
-// Comparison or Relational operators
-static void comparisonOperators() {
-	System.out.println("\nInside comparisonOperators ...");
-	int age = 20;
-	/*if (age > 21) {
-		System.out.println("Graduate student");
-	}*/
-	System.out.println("age > 21: " + (age > 21));
-	System.out.println("age >= 21: " + (age >= 21));  
-	System.out.println("age < 21: " + (age < 21));
-	System.out.println("age <= 21: " + (age <= 21));	  
-	System.out.println("age == 21: " + (age == 21)); // equal to (equality operator)
-	System.out.println("age != 21: " + (age != 21)); // not equal to (equality operator)
-	
-	boolean isInternational = true;
-	//System.out.println("isInternational <= true: " + (isInternational <= true));  
-	System.out.println("isInternational == true: " + (isInternational == true)); 
-	System.out.println("isInternational != true: " + (isInternational != true));
-	
-	Student s1 = new Student(1000, "Dheeru");
-	Student s2 = new Student(1000, "Dheeru");
-	System.out.println("s1 == s2: " + (s1 == s2)); // See object class
-	System.out.println("s1 != s2: " + (s1 != s2));
-	
-	update(s1, "John");
-}		
-
-static boolean update(Student s, String name) {
-	if (s == null) {
-		return false;
-	}
-	
-	s.name = name;		
-	return true;
-}
-
-static void logicalOperators() {
-	System.out.println("\nInside logicalOperators ...");
-	int age = 37;
-	int salary = 85000;
-	boolean hasBadCredit = false;
-	
-	// 1. Core (AND, OR, NOT & Operator Chaining)
-	
-	if (age > 35 && salary > 90000 || !hasBadCredit) {
-		System.out.println("Loan approved!");
-	} else {
-		System.out.println("Loan not approved!");
-	}
-	
-	// 2. 
-	//    (a) Left-associative ~ Order of grouping
-	//    (b) Associativity (a && b) && c = a && (b && c)
-	//    Applies to both && and ||
-	
-	
-	// 3. 
-	//    (a) Operator precedence of Logical Operators: Helps with ONLY grouping operations. Not order of execution. (! > && > ||)
-	
-				// Other Examples: A && B || C && D = (A && B) || (C && D)
-				//                 A && B && C || D = ((A && B) && C) || D
-	
-	
-	//    (b) Operator Precedence across logical, comparison and arithmetic
-	//          ! > arithmetic > comparison > &&, ||
-	//    See resources section for complete precedence rules
-	
-	// ALWAYS USE PARENTHESIS for READABILITY. Not everyone is aware of precedence rules
-	
-	// 4. Use && to avoid NullPointerException
-	Student s1 = new Student(1001, "Raj");
-	update(s1, "Dheeru");
+static void charTypePromotion() {
+	System.out.println("\nInside charTypePromotion ...");
+	char char1 = 50; // Will be assigned corresponding UTF16 value 2
+	System.out.println("char1: " + char1); 
+	System.out.println("(73 - char1): " + (73 - char1)); // char1 gets promoted to int, i.e., decimal equivalent 50 in UTF16 is used	  
+	System.out.println("(char1 - '3'): " + (char1 - '3')); // char1 & '3' are promoted to ints	
+	System.out.println("('a' + 'b'): " + ('a' +'b')); // 'a' & 'b' are promoted to ints and the respective equivalents 97 & 98 are added
 }
 
 static void bitwiseOperators() {
@@ -249,39 +140,21 @@ static void bitwiseOperators() {
 	//double d2 = 5.15;
 	//System.out.println("d1 | d2: " + (d1 | d2));
 }
-	
 
-static boolean ifStatement() {
-	boolean approved = false;
-	
-	int age = 27;
-	int salary = 60000;
-	boolean hasBadCredit = false;
-	
-	if (age >= 25 && age <= 35 && salary >= 50000) {		
-		approved = true;            			
-		System.out.println("age >= 25 && age <= 35 && salary >= 50000");
-	} else if (age > 35 && age <= 45 && salary >= 70000) {
-		approved = true;			
-		System.out.println("age > 35 && age <= 45 && salary >= 70000");
-	} else if (age > 45 && age <= 55 && salary >= 90000) {
-		approved = true;			
-		System.out.println("age > 45 && age <= 55 && salary >= 90000");
-	} else {
-		if (age > 55 && !hasBadCredit) {
-			approved = true;			
-			System.out.println("age > 55 && !hasBadCredit");
-		}
-		System.out.println("else block");
-	}
-	
-			
-	System.out.println("outside if");
-	return approved;
+static void switchExample() {
+System.out.println("\nInside switchExample ...");
+int month = 3;
+switch (month) {
+	case 1: System.out.println("January");
+			break;
+	case 2: System.out.println("February");
+			break;
+	case 3: System.out.println("March");
+			break;
+	default: System.out.println("April");
 }
-
+}
 	
-
 public static void main(String[] args) {	
 	// Language Basics 1
 	//print();				
@@ -292,17 +165,8 @@ public static void main(String[] args) {
 	/*varargsOverload(true, 1, 2, 3);
 	varargsOverload(true, 1, 2, 3, 4, 5, 6, 7, 8);	  
 	varargsOverload(true);*/
-	
-	//preAndPost();
-	//compoundArithmeticAssignment();
-	//isOddOrEven(51);
-	
-	//comparisonOperators();
-	//logicalOperators();	  
+	//charTypePromotion();
 	//bitwiseOperators();
-	ifStatement();
-}  
-
-	
+	switchExample();
+}       
 }
-
