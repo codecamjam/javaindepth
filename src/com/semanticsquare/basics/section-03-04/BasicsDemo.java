@@ -111,6 +111,7 @@ static void varargsOverload(boolean b, int... list){
 	System.out.println("list.length: " + list.length);
 }	
 
+	
 static void preAndPost() {
 	System.out.println("\nInside preAndPost ...");
 	
@@ -161,7 +162,44 @@ static void charTypePromotion() {
 	System.out.println("(char1 - '3'): " + (char1 - '3')); // char1 & '3' are promoted to ints	
 	System.out.println("('a' + 'b'): " + ('a' +'b')); // 'a' & 'b' are promoted to ints and the respective equivalents 97 & 98 are added
 }
+
+
+// Comparison or Relational operators
+static void comparisonOperators() {
+	int age = 20;
+	/*if (age > 21) {
+		System.out.println("Graduate student");
+	}*/
+	System.out.println("age > 21: " + (age > 21));
+	System.out.println("age >= 21: " + (age >= 21));  
+	System.out.println("age < 21: " + (age < 21));
+	System.out.println("age <= 21: " + (age <= 21));	  
+	System.out.println("age == 21: " + (age == 21)); // equal to (equality operator)
+	System.out.println("age != 21: " + (age != 21)); // not equal to (equality operator)
 	
+	boolean isInternational = true;
+	//System.out.println("isInternational <= true: " + (isInternational <= true));  
+	System.out.println("isInternational == true: " + (isInternational == true)); 
+	System.out.println("isInternational != true: " + (isInternational != true));
+	
+	Student s1 = new Student(1000, "Dheeru");
+	Student s2 = new Student(1000, "Dheeru");
+	System.out.println("s1 == s2: " + (s1 == s2)); // See object class
+	System.out.println("s1 != s2: " + (s1 != s2));
+	
+	update(s1, "John");
+}		
+
+static boolean update(Student s, String name) {
+	if (s == null) {
+		return false;
+	}
+	
+	s.name = name;
+	return true;
+}
+
+
 public static void main(String[] args) {	
 	// Language Basics 1
 	//print();				
@@ -176,6 +214,20 @@ public static void main(String[] args) {
 	//preAndPost();
 	//compoundArithmeticAssignment();
 	//isOddOrEven(51);
-	charTypePromotion();
-}       
+	//charTypePromotion();	  
+	comparisonOperators();	  
+	
+}  
+
+	
 }
+
+
+/*
+System.out.println("age > 21: " + (age > 21));
+System.out.println("age >= 21: " + (age >= 21));  
+	System.out.println("age < 21: " + (age < 21));
+	System.out.println("age <= 21: " + (age <= 21));	  
+	System.out.println("age == 21: " + (age == 21)); // equal to (equality operator)
+	System.out.println("age != 21: " + (age != 21)); // not equal to (equality operator)
+	*/
