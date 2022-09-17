@@ -166,6 +166,7 @@ static void charTypePromotion() {
 
 // Comparison or Relational operators
 static void comparisonOperators() {
+	System.out.println("\nInside comparisonOperators ...");
 	int age = 20;
 	/*if (age > 21) {
 		System.out.println("Graduate student");
@@ -195,10 +196,49 @@ static boolean update(Student s, String name) {
 		return false;
 	}
 	
-	s.name = name;
+	s.name = name;		
 	return true;
 }
 
+static void logicalOperators() {
+	System.out.println("\nInside logicalOperators ...");
+	int age = 37;
+	int salary = 85000;
+	boolean hasBadCredit = false;
+	
+	// 1. Core (AND, OR, NOT & Operator Chaining)
+	
+	if (age > 35 && salary > 90000 || !hasBadCredit) {
+		System.out.println("Loan approved!");
+	} else {
+		System.out.println("Loan not approved!");
+	}
+	
+	// 2. 
+	//    (a) Left-associative ~ Order of grouping
+	//    (b) Associativity (a && b) && c = a && (b && c)
+	//    Applies to both && and ||
+	
+	
+	// 3. 
+	//    (a) Operator precedence of Logical Operators: Helps with ONLY grouping operations. Not order of execution. (! > && > ||)
+	
+				// Other Examples: A && B || C && D = (A && B) || (C && D)
+				//                 A && B && C || D = ((A && B) && C) || D
+	
+	
+	//    (b) Operator Precedence across logical, comparison and arithmetic
+	//          ! > arithmetic > comparison > &&, ||
+	//    See resources section for complete precedence rules
+	
+	// ALWAYS USE PARENTHESIS for READABILITY. Not everyone is aware of precedence rules
+	
+	// 4. Use && to avoid NullPointerException
+	Student s1 = new Student(1001, "Raj");
+	update(s1, "Dheeru");
+}
+
+	
 
 public static void main(String[] args) {	
 	// Language Basics 1
@@ -215,19 +255,10 @@ public static void main(String[] args) {
 	//compoundArithmeticAssignment();
 	//isOddOrEven(51);
 	//charTypePromotion();	  
-	comparisonOperators();	  
+	//comparisonOperators();
+	logicalOperators();	  
 	
 }  
 
 	
 }
-
-
-/*
-System.out.println("age > 21: " + (age > 21));
-System.out.println("age >= 21: " + (age >= 21));  
-	System.out.println("age < 21: " + (age < 21));
-	System.out.println("age <= 21: " + (age <= 21));	  
-	System.out.println("age == 21: " + (age == 21)); // equal to (equality operator)
-	System.out.println("age != 21: " + (age != 21)); // not equal to (equality operator)
-	*/
