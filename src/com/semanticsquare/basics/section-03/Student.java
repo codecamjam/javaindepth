@@ -14,9 +14,9 @@ class Student {
     double tuitionFees = 12000.0;
     double internationalFees = 5000.0;
     
-    Student(int id, String name, String gender, int age, long phone, double gpa, 
-                char degree) {		  
-        this(id, name, gender, age, phone, gpa, degree, false);
+    Student(int newId, String newName, String newGender, int newAge, long newPhone, double newGpa, 
+                char newDegree) {		  
+        this(newId, newName, newGender, newAge, newPhone, newGpa, newDegree, false);		  
     }
     
     Student(int id, String name, String gender, int age, long phone, double gpa, 
@@ -38,7 +38,7 @@ class Student {
             //return;
         }	
         
-        System.out.println("\nid: " + this.id);
+        /* System.out.println("\nid: " + this.id);
         System.out.println("nextId: " + nextId);
         System.out.println("name: " + this.name);
         System.out.println("gender: " + this.gender);
@@ -47,7 +47,7 @@ class Student {
         System.out.println("gpa: " + this.gpa);
         System.out.println("degree: " + this.degree);
         System.out.println("tuitionFees: " + tuitionFees);
-        System.out.println("studentCount: " + studentCount);
+        System.out.println("studentCount: " + studentCount);*/
     }
     
     Student() {}
@@ -57,21 +57,5 @@ class Student {
         return true;
     }
 
-
-    public static void main(String[] args) {
-        Student student1 = new Student(1000, "Joan", "male", 18, 223_456_7890L, 3.8, 'B');
-        
-        Student student2 = new Student(1001, "Raj", "male", 21, 223_456_9999L, 3.4, 'M', true);
-        
-        Student student3 = new Student(1002, "Anita", "female", 20, 223_456_8888L, 4.0, 'M', true);
-        
-        System.out.println("\nStudent.studentCount: " + Student.studentCount);
-        
-        System.out.println("\nName of student 1: " + student1.name);
-        System.out.println("Name of student 2: " + student2.name);
-        System.out.println("Name of student 3: " + student3.name);
-        
-        student1.updateProfile("John");
-        System.out.println("\nUpdated name of student 1: " + student1.name);
-    }
+    
 }
