@@ -15,6 +15,11 @@ class Student {
     double internationalFees = 5000.0;
     
     Student(int newId, String newName, String newGender, int newAge, long newPhone, double newGpa, 
+                char newDegree) {		  
+        this(newId, newName, newGender, newAge, newPhone, newGpa, newDegree, false);		  
+    }
+    
+    Student(int newId, String newName, String newGender, int newAge, long newPhone, double newGpa, 
                 char newDegree, boolean isInternational) {
         id = newId;
         name = newName;
@@ -31,7 +36,7 @@ class Student {
         if (international) {
             tuitionFees = tuitionFees + internationalFees;
             //return;
-        }		
+        }	
         
         System.out.println("\nid: " + id);
         System.out.println("nextId: " + nextId);
@@ -49,7 +54,7 @@ class Student {
 
 
     public static void main(String[] args) {
-        Student student1 = new Student(1000, "John", "male", 18, 223_456_7890L, 3.8, 'B', false);
+        Student student1 = new Student(1000, "John", "male", 18, 223_456_7890L, 3.8, 'B');
         
         Student student2 = new Student(1001, "Raj", "male", 21, 223_456_9999L, 3.4, 'M', true);
         
