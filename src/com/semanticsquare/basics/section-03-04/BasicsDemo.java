@@ -169,6 +169,23 @@ class BasicsDemo {
 		}
 		
 		System.out.println("num: " + num); // prints 55		
+
+
+		/*
+			INVALID EXAMPLE:
+
+			label1: for() {
+				for() {
+					break label1;
+				}
+			}
+
+			label2: for() {
+				for() {
+					break label1; //compiler error
+				}
+			}
+		*/
 	}
 		
 	public static void main(String[] args) {	
