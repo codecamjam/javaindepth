@@ -1,4 +1,4 @@
-class BasicsDemo {
+  class BasicsDemo {
 	// Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
 	static void print() {
 		System.out.println("\n\nInside print ...");
@@ -169,23 +169,22 @@ class BasicsDemo {
 		}
 		
 		System.out.println("num: " + num); // prints 55		
+	}
 
-
-		/*
-			INVALID EXAMPLE:
-
-			label1: for() {
-				for() {
-					break label1;
+	static void labeledContinue() {
+		System.out.println("\nInside labeledContinue ...");
+		int num = 0;
+		
+		outermost: for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {    
+				if (i == 5 && j == 5) {
+					continue outermost;
 				}
+				num++;
 			}
-
-			label2: for() {
-				for() {
-					break label1; //compiler error
-				}
-			}
-		*/
+		}
+		
+		System.out.println("num: " + num); // prints 55		
 	}
 		
 	public static void main(String[] args) {	
@@ -201,6 +200,7 @@ class BasicsDemo {
 		//charTypePromotion();
 		//bitwiseOperators();
 		//switchExample();
-		labeledBreak();
+		//labeledBreak();
+		labeledContinue();
 	}       
-}
+  }
