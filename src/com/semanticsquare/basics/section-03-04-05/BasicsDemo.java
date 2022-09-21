@@ -1,4 +1,14 @@
-  class BasicsDemo {
+// import java.util.Date;
+// import java.util.*;
+import java.util.Date;
+import java.util.ArrayList;
+
+//YOU CANNOT DO THIS:
+// import java.util.Date;
+// import java.sql.Date;
+
+
+class BasicsDemo {
 	// Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
 	static void print() {
 		System.out.println("\n\nInside print ...");
@@ -188,19 +198,9 @@
 	}
 		
 	public static void main(String[] args) {	
-		// Language Basics 1
-		//print();				
-		//primitives();
-		//typeCasting();
-		//arrays();	
-		//threeDimensionalArrays();	
-		/*varargsOverload(true, 1, 2, 3);
-		varargsOverload(true, 1, 2, 3, 4, 5, 6, 7, 8);	  
-		varargsOverload(true);*/
-		//charTypePromotion();
-		//bitwiseOperators();
-		//switchExample();
-		//labeledBreak();
-		labeledContinue();
+		Date date;
+		ArrayList list;
+		//java.util.Date date = new java.util.Date();
+		//java.sql.Date date2;
 	}       
-  }
+}
