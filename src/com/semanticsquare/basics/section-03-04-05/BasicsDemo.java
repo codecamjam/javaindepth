@@ -3,74 +3,74 @@
   class BasicsDemo {
     // Adapted from http://www.ntu.edu.sg/home/ehchua/programming/java/J1a_Introduction.html
     static void print() {
-		System.out.println("\n\nInside print ...");
-		System.out.println("Hello, world!!"); // Advance cursor to beginning of next line
-		System.out.println();                 // Print empty line
-		System.out.print("Hello, world!!");   // Cursor stayed after the printed string
-		System.out.println("Hello,");
-		System.out.print(" ");                // Print a space
-		System.out.print("world!!");
+      System.out.println("\n\nInside print ...");
+      System.out.println("Hello, world!!"); // Advance cursor to beginning of next line
+      System.out.println();                 // Print empty line
+      System.out.print("Hello, world!!");   // Cursor stayed after the printed string
+      System.out.println("Hello,");
+      System.out.print(" ");                // Print a space
+      System.out.print("world!!");
     }
 	
 	static void primitives() {
-		System.out.println("\n\nInside primitives ..."); 
-		// literals demo
-		int intHex = 0x0041;
-		System.out.println("intHex: " + intHex);
-		int intBinary = 0b01000001;
-		System.out.println("intBinary: " + intBinary);
-		int intChar = 'A'; // holds decimal equivalent, which is 65
-		System.out.println("intChar: " + intChar);
-		int intUnderscore = 1_23_456;
-		System.out.println("intUnderscore: " + intUnderscore);
-		
-		char charA = 'A';
-		System.out.println("charA: " + charA);
-		char charInt = 65;
-		System.out.println("charInt: " + charInt);
-		char charUnicode1 = '\u0041'; // 4 * (16 power 1 )+ 1 * (16 power 0)
-		System.out.println("charUnicode1: " + charUnicode1);
-		char charUnicode2 = 0x41;     // 4 * (16 power 1 )+ 1 * (16 power 0)
-		System.out.println("charUnicode2: " + charUnicode2);
-		char charBinary = 0b01000001; // binary corresponding to decimal 65
-		System.out.println("charBinary: " + charBinary);	  		  	  
+	  System.out.println("\n\nInside primitives ..."); 
+	  // literals demo
+	  int intHex = 0x0041;
+	  System.out.println("intHex: " + intHex);
+	  int intBinary = 0b01000001;
+	  System.out.println("intBinary: " + intBinary);
+	  int intChar = 'A'; // holds decimal equivalent, which is 65
+	  System.out.println("intChar: " + intChar);
+	  int intUnderscore = 1_23_456;
+	  System.out.println("intUnderscore: " + intUnderscore);
+	  
+	  char charA = 'A';
+	  System.out.println("charA: " + charA);
+	  char charInt = 65;
+	  System.out.println("charInt: " + charInt);
+	  char charUnicode1 = '\u0041'; // 4 * (16 power 1 )+ 1 * (16 power 0)
+	  System.out.println("charUnicode1: " + charUnicode1);
+	  char charUnicode2 = 0x41;     // 4 * (16 power 1 )+ 1 * (16 power 0)
+	  System.out.println("charUnicode2: " + charUnicode2);
+	  char charBinary = 0b01000001; // binary corresponding to decimal 65
+	  System.out.println("charBinary: " + charBinary);	  		  	  
     }
   
     static void typeCasting() {
-		System.out.println("\nInside typeCasting ...");
-		// Explicit casting
-		long y = 42;
-		//int x = y;
-		int x = (int)y;
-		
-		// Information loss due to out-of-range assignment
-		byte narrowdByte = (byte)123456;
-		System.out.println("narrowdByte: " + narrowdByte); 
-		
-		// Truncation
-		int iTruncated = (int)0.99;
-		System.out.println("iTruncated: " + iTruncated); 
-		
-		// Implicit cast (int to long)
-		y = x;
-		
-		// Implicit cast (char to int)
-		char cChar = 'A';
-		int iInt = cChar; 
-		System.out.println("iInt: " + iInt);
-		
-		// byte to char using an explicit cast
-		byte bByte = 65;
-		cChar = (char)bByte; // special conversion (widening from byte --> int followed by narrowing from int --> char)
-		System.out.println("cChar: " + cChar);
+      System.out.println("\nInside typeCasting ...");
+      // Explicit casting
+      long y = 42;
+      //int x = y;
+      int x = (int)y;
+      
+      // Information loss due to out-of-range assignment
+      byte narrowdByte = (byte)123456;
+	  System.out.println("narrowdByte: " + narrowdByte); 
+	  
+	  // Truncation
+	  int iTruncated = (int)0.99;
+	  System.out.println("iTruncated: " + iTruncated); 
+	  
+	  // Implicit cast (int to long)
+	  y = x;
+	  
+	  // Implicit cast (char to int)
+	  char cChar = 'A';
+	  int iInt = cChar; 
+	  System.out.println("iInt: " + iInt);
+	  
+	  // byte to char using an explicit cast
+	  byte bByte = 65;
+	  cChar = (char)bByte; // special conversion (widening from byte --> int followed by narrowing from int --> char)
+	  System.out.println("cChar: " + cChar);
     }
 	
 	static void arrays() {
-		System.out.println("\nInside arrays ...");
-		int[] myArray = new int[]{9, 11, 2, 5, 4, 4, 6};
-		System.out.println("myArray.length: " + myArray.length);
-		System.out.println("myArray[1]: " + myArray[1]);
-		System.out.println("myArray[7]: " + myArray[7]);	   
+	   System.out.println("\nInside arrays ...");
+	   int[] myArray = new int[]{9, 11, 2, 5, 4, 4, 6};
+       System.out.println("myArray.length: " + myArray.length);
+	   System.out.println("myArray[1]: " + myArray[1]);
+	   System.out.println("myArray[7]: " + myArray[7]);	   
 	}
 
     static void threeDimensionalArrays() {
@@ -114,12 +114,12 @@
 	}	
 	
 	static void charTypePromotion() {
-		System.out.println("\nInside charTypePromotion ...");
-		char char1 = 50; // Will be assigned corresponding UTF16 value 2
-		System.out.println("char1: " + char1); 
-		System.out.println("(73 - char1): " + (73 - char1)); // char1 gets promoted to int, i.e., decimal equivalent 50 in UTF16 is used	  
-		System.out.println("(char1 - '3'): " + (char1 - '3')); // char1 & '3' are promoted to ints	
-		System.out.println("('a' + 'b'): " + ('a' +'b')); // 'a' & 'b' are promoted to ints and the respective equivalents 97 & 98 are added
+	  System.out.println("\nInside charTypePromotion ...");
+	  char char1 = 50; // Will be assigned corresponding UTF16 value 2
+	  System.out.println("char1: " + char1); 
+	  System.out.println("(73 - char1): " + (73 - char1)); // char1 gets promoted to int, i.e., decimal equivalent 50 in UTF16 is used	  
+	  System.out.println("(char1 - '3'): " + (char1 - '3')); // char1 & '3' are promoted to ints	
+	  System.out.println("('a' + 'b'): " + ('a' +'b')); // 'a' & 'b' are promoted to ints and the respective equivalents 97 & 98 are added
     }
 	
 	static void bitwiseOperators() {
@@ -144,17 +144,17 @@
     }
   
     static void switchExample() {
-		System.out.println("\nInside switchExample ...");
-		int month = 3;
-		switch (month) {
-			case 1: System.out.println("January");
-					break;
-			case 2: System.out.println("February");
-					break;
-			case 3: System.out.println("March");
-					break;
-			default: System.out.println("April");
-		}
+	    System.out.println("\nInside switchExample ...");
+	    int month = 3;
+	    switch (month) {
+		    case 1: System.out.println("January");
+	                break;
+		    case 2: System.out.println("February");
+	                break;
+	        case 3: System.out.println("March");
+	                break;
+		    default: System.out.println("April");
+	    }
     }
   
     static void labeledBreak() {
@@ -200,16 +200,7 @@
 		// Comparison
 		System.out.println("\ns.equals(\"HELLO WORLD!\"): " + s.equals("HELLO WORLD!"));
 		System.out.println("s.equalsIgnoreCase(\"HELLO WORLD!\"): " + s.equalsIgnoreCase("HELLO WORLD!"));
-		//returns an int, - if char comes after, + if it precedes , and 0 = identical
-		//compares lexicographically
-		//so each char in the string has a unicode value
-		//so method compares the 2 unicode characters in the 2 strings char by char
-		//so here result is 32 becuase uppercase unicode letters come before lowercase letters
-		//so because the smaller chars in s comes after the uppercase H, so because of that
-		//it returns a positive integer
-		System.out.println("s.compareTo(\"HELLO WORLD!\"): " + s.compareTo("HELLO WORLD!")); 
-		//here we get -18 - because z(122) comes after h(104) (104 - 122 = -18)
-		System.out.println("s.compareTo(\"HELLO WORLD!\"): " + s.compareTo("zELLO WORLD!")); 
+		System.out.println("s.compareTo(\"HELLO WORLD!\"): " + s.compareTo("HELLO WORLD!"));
 		
 		// Searching
 		System.out.println("\ns.contains(\"HELLO WORLD!\"): " + s.contains("HELLO WORLD!"));
@@ -228,44 +219,59 @@
 		System.out.println("\ns.substring(4): " + s.substring(4));
 		System.out.println("s.substring(4, 9): " + s.substring(4, 9));
 		
-		// Case conversions (Note: String is immutable. So, only a copy is returned)
+		// Case conversions
 		System.out.println("\ns.toUpperCase(): " + s.toUpperCase());
 		System.out.println("s.toLowerCase(): " + s.toLowerCase());
 		
 		System.out.println("\ns.trim(): " + s.trim()); // returns a copy of string after trimming any leading & trailing white spaces
 		
-		
-		// Replace (e.g., replace comma's with white-space)
+		// Replace
 		System.out.println("\ns.replaceAll(\"o\", \"r\"): " + s.replaceAll("o", "r"));
 		
-		// Split (e.g., split a document into words or split a line of text by tab or comma or white space)
+		// Split
 		System.out.println("\ns.split(\"o\"): ");
 		String[] sa = s.split("o");
 		for (String temp : sa) {
 			System.out.println(temp);
 		}
 		
-		// Static method (includes overloaded methods)
-		System.out.println("\nString.valueOf(1.3): " + String.valueOf(1.3));
+		System.out.println("\ns.valueOf(1.3): " + s.valueOf(1.3));
 	}
+	
+	static void stringPool() {
+	  System.out.println("\nInside stringPool ...");
+	  String s1 = "hello!";
+	  String s2 = "hello!";
+	  String s3 = "hello!".intern();
+	  String s4 = new String("hello!");	 
+	  String s5 = "lo!";
+
+      System.out.println("s1 == s2: " + (s1 == s2));
+      System.out.println("s1 == s3: " + (s1 == s3));
+      System.out.println("s1 == s4: " + (s1 == s4));
+      System.out.println("s1 == s4.intern(): " + (s1 == s4.intern()));
+      System.out.println("s1 == \"hel\" + \"lo!\": " + (s1 == "hel" + "lo!"));
+      System.out.println("s1 == \"hel\" + s5: " + (s1 == "hel" + s5));
+    }
 		
 	public static void main(String[] args) {	
-		// Language Basics 1
-		//print();				
-		//primitives();
-		//typeCasting();
-		//arrays();	
-		//threeDimensionalArrays();	
-		/*varargsOverload(true, 1, 2, 3);
-		varargsOverload(true, 1, 2, 3, 4, 5, 6, 7, 8);	  
-		varargsOverload(true);*/
-		//charTypePromotion();
-		//bitwiseOperators();
-		//switchExample();
-		//labeledBreak();
-		//labeledContinue();
-		// import demo
-		// package creation demo
-		stringExamples();	  
+	  // Language Basics 1
+	  //print();				
+	  //primitives();
+	  //typeCasting();
+	  //arrays();	
+      //threeDimensionalArrays();	
+      /*varargsOverload(true, 1, 2, 3);
+      varargsOverload(true, 1, 2, 3, 4, 5, 6, 7, 8);	  
+      varargsOverload(true);*/
+	  //charTypePromotion();
+	  //bitwiseOperators();
+	  //switchExample();
+	  //labeledBreak();
+	  //labeledContinue();
+      // import demo
+      // package creation demo
+      //stringExamples();	
+      stringPool();	  
     }       
-}
+  }
